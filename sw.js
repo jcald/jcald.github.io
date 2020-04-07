@@ -6,7 +6,7 @@ self.addEventListener("fetch", (event) => {
     console.log(event.request.url);
     // event.respondWith(null);
     // console.log('despues 1er respondWidth')
-    let fotoReq = fetch('img/playa.jpg');
+    let fotoReq = fetch('img/main.jpg');
     event.respondWith(fotoReq);
     console.log('despues 2do respondWidth')
   }
