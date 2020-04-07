@@ -4,8 +4,8 @@ self.addEventListener("fetch", (event) => {
   console.log("En fetch");
   if (event.request.url.includes(".jpg")) {
     console.log(event.request.url);
-    event.respondWith(null);
-    console.log('despues 1er respondWidth')
+    // event.respondWith(null);
+    // console.log('despues 1er respondWidth')
     let fotoReq = fetch('img/playa.jpg');
     event.respondWith(fotoReq);
     console.log('despues 2do respondWidth')
