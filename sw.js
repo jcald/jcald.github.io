@@ -2,13 +2,12 @@ console.log("sw.js");
 
 self.addEventListener("fetch", (event) => {
   console.log("En fetch");
-  if (event.request.url.includes(".jpg")) {
-    console.log(event.request.url);
-    // event.respondWith(null);
-    // console.log('despues 1er respondWidth')
-    let fotoReq = fetch('img/main.jpg');
-    event.respondWith(fotoReq);
-    console.log('despues 2do respondWidth')
+  if (event.request.url.includes("style.css")) {
+    event.respondWith(null);
+    console.log('Despues respondWidth null');
+  } else {
+    event.respondWith( fetch( event.request ));
+    console.log('Despues respondWidth con fetch');
   }
 });
 
