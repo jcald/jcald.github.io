@@ -38,5 +38,6 @@ console.log('app.js');
         // registration failed :(
         console.log('ServiceWorker registration failed: ', err);
       });
+      console.log('Fin de load de sericeWorker');
     });
   }
