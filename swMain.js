@@ -1,7 +1,7 @@
 console.log("sw.js");
 
 self.addEventListener("fetch", (event) => {
-  console.log('url: ', event.request.url);
+  // console.log('url: ', event.request.url);
   // if (event.request.url.includes("style.css")) {
   //   event.respondWith(null);
   //   // console.log('   Despues respondWidth null');
