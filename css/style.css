@@ -21,4 +21,7 @@ p{
 
 #nav{
     color: rgb(235, 6, 6);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
