@@ -1,0 +1,5 @@
+/home/nuevo/reactjs/src/serviceWorker/simple/klerith/jcald.github.io-jcald/swFull
+10472	.
+1388	./font
+640	./app
+16	./assets
