@@ -13,15 +13,16 @@ recognition.onresult = (event) => {
     const results = event.results;
     console.log(results);
     const frase = results[results.length - 1][0].transcript;
+    console.log('frase: ' ,frase)
     texto.value += frase;
 }
 
 btnStartRecord.addEventListener('click', () => {
-    console.log(btnStartRecord);
+    console.log('btnStartRecord');
     recognition.start();
 });
 
 btnStopRecord.addEventListener('click', () => {
-    console.log(btnStartRecord);
+    console.log('btnStartRecord');
     recognition.abort();
 });
