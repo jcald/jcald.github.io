@@ -37,6 +37,10 @@ btnStopRecord.addEventListener('click', () => {
     recognition.abort();
 });
 
+btnPlayText.addEventListener('click', () => {
+    leerTexto(texto.value);
+});
+
 function leerTexto(texto) {
     const speech = new SpeechSynthesisUtterance();
     speech.text = texto;
