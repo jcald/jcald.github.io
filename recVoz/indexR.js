@@ -10,8 +10,8 @@ recognition.interimResults = false;
 console.log('Recognition: ', recognition);
 
 recognition.onresult = (event) => {
+    console.log('onresult -------------------------');
     const results = event.results;
-    console.log(results);
     const frase = results[results.length - 1][0].transcript;
     console.log('frase: ' ,frase)
     texto.value += frase;
@@ -23,6 +23,6 @@ btnStartRecord.addEventListener('click', () => {
 });
 
 btnStopRecord.addEventListener('click', () => {
-    console.log('btnStartRecord');
+    console.log('btnStopRecord');
     recognition.abort();
 });
