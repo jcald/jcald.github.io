@@ -1,34 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Demo annyang</title>
   </head>
   <body>
-    <a href="otro.html">Otro</a>
-    
-    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.4.0/annyang.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/1.0.0/speechkitt.min.js"></script>
+    <h1>Demo annyang</h1>
+    <a href="debug">Debug</a><br>
+    <a href="speechKitt.html">Speech Kit OK</a>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
     <script>
       if (annyang) {
-        // Add our commands to annyang
-        annyang.addCommands({
-          hola: function () {
+        // Let's define a command.
+        var commands = {
+          hi,
+          hello: function () {
             alert("Hello world!");
           },
+          chao,
+          bye: function () {
+            alert("Bye!");
+          },
+        };
+
+        // Add our commands to annyang
+        annyang.addCommands(commands);
+        annyang.setLanguage("es-PE");
+        annyang.addCallback("result", function (phrases) {
+          console.log("I think the user said: ", phrases[0]);
+          console.log(
+            "But then again, it could be any of the following: ",
+            phrases
+          );
         });
-
-        // Tell KITT to use annyang
-        SpeechKITT.annyang();
-
-        // Define a stylesheet for KITT to use
-        SpeechKITT.setStylesheet(
-          "//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/1.0.0/themes/flat.css"
-        );
-
-        // Render KITT's interface
-        SpeechKITT.vroom();
+        // Start listening.
+        annyang.start();
       }
     </script>
   </body>
