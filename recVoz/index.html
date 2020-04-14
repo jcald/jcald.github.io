@@ -7,12 +7,20 @@
   </head>
   <body>
     <h1>Demo annyang</h1>
-    <a href="debug01">Debug 01</a><br>
-    <a href="debug02">Debug 02</a><br>
+    <a href="debug01">Debug 01</a><br />
+    <a href="debug02">Debug 02</a><br />
     <a href="speechKitt.html">Speech Kit OK</a>
-
+    <h2>Debuging annayasg </h2>
+    <div id="debug">
+      <li id="n1"></li>
+      <li id="n2"></li>
+      <li id="n3"></li>
+      <li id="n4"></li>
+      <li id="n5"></li>
+    </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
     <script>
+      dd=document.getElementById('debug');
       if (annyang) {
         // Let's define a command.
         var commands = {
@@ -29,13 +37,17 @@
         // Add our commands to annyang
         annyang.addCommands(commands);
         annyang.setLanguage("es-PE");
+
         annyang.addCallback("result", function (phrases) {
-          console.log("I think the user said: ", phrases[0]);
-          console.log(
-            "But then again, it could be any of the following: ",
-            phrases
-          );
+          dd.innerText = phrases[0];
+          dd.innerText = phrases;
+          // console.log("I think the user said: ", phrases[0]);
+          // console.log(
+            // "But then again, it could be any of the following: ",
+            // phrases
+          // );
         });
+        
         // Start listening.
         annyang.start();
       }
