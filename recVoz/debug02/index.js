@@ -8,7 +8,7 @@ if (annyang) {
   
     // Add our commands to annyang
     annyang.addCommands({
-      'hello': function() {
+      'hi','hello': function() {
         alert('Hello world!');
       },
       'show directions': function() {
