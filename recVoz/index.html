@@ -33,7 +33,7 @@
     <div class="box">
       <!-- stuff -->
       <!-- <p class="bet_time">Bet 5 days ago</p> -->
-      <button class="btnClear" type="reset" onclick="clear()">Clear</button>
+      <button class="btnClear" onclick="clear()">Clear</button>
     </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
     <script>
@@ -67,10 +67,11 @@
 
         // Start listening.
         annyang.start();
-      }
+      
       function clear() {
         dd.innerHTML = "Resultado:<br/>";
       }
+    }
     </script>
   </body>
 </html>
