@@ -4,13 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Demo annyang</title>
+    <style>
+      .box {
+        position: relative;
+      }
+      .btnClear{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    </style>
   </head>
   <body>
     <h1>Demo annyang</h1>
     <a href="debug01">Debug 01</a><br />
     <a href="debug02">Debug 02</a><br />
     <a href="speechKitt.html">Speech Kit OK</a>
-    <h2>Debuging annayasg </h2>
+    <h2>Debuging annayasg</h2>
     <div id="debug">
       <li id="n1"></li>
       <li id="n2"></li>
@@ -18,9 +28,15 @@
       <li id="n4"></li>
       <li id="n5"></li>
     </div>
+
+    <div class="box">
+      <!-- stuff -->
+      <!-- <p class="bet_time">Bet 5 days ago</p> -->
+      <button id="btnClear" type="reset" onclick="clear()">Clear</button>
+    </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
     <script>
-      dd=document.getElementById('debug');
+      dd = document.getElementById("debug#n1");
       if (annyang) {
         // Let's define a command.
         var commands = {
@@ -37,17 +53,20 @@
         annyang.setLanguage("es-PE");
 
         annyang.addCallback("result", function (phrases) {
-          dd.innerText = phrases[0];
-          dd.innerText = phrases;
+          dd.innerHTML += "<li>" + phrases[0] + "<li/>";
+          dd.innerHTML += "<li>" + phrases + "<li/>";
           // console.log("I think the user said: ", phrases[0]);
           // console.log(
-            // "But then again, it could be any of the following: ",
-            // phrases
+          // "But then again, it could be any of the following: ",
+          // phrases
           // );
         });
-        
+
         // Start listening.
         annyang.start();
+      }
+      function clear() {
+        dd.innerHTML = "";
       }
     </script>
   </body>
