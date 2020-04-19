@@ -38,7 +38,8 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
     <script>
       function clear() {
-        dd.innerHTML = "Resultado:<br/>";
+        console.log('clear');
+        document.getElementById("debug").innerHTML = "Resultado:<br/>";
       }
       dd = document.getElementById("debug");
       if (annyang) {
