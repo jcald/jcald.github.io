@@ -8,7 +8,8 @@
       .box {
         position: relative;
       }
-      .btnClear{
+      .btnClear {
+        background-color: darkorange;
         position: absolute;
         bottom: 0;
         right: 0;
@@ -32,7 +33,7 @@
     <div class="box">
       <!-- stuff -->
       <!-- <p class="bet_time">Bet 5 days ago</p> -->
-      <button id="btnClear" type="reset" onclick="clear()">Clear</button>
+      <button class="btnClear" type="reset" onclick="clear()">Clear</button>
     </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
     <script>
@@ -54,6 +55,8 @@
 
         annyang.addCallback("result", function (phrases) {
           dd.innerHTML += "<li>" + phrases[0] + "<li/>";
+          dd.innerHTML += "<li>" + phrases[1] + "<li/>";
+          dd.innerHTML += "<li>" + phrases[2] + "<li/>";
           dd.innerHTML += "<li>" + phrases + "<li/>";
           // console.log("I think the user said: ", phrases[0]);
           // console.log(
@@ -66,7 +69,7 @@
         annyang.start();
       }
       function clear() {
-        dd.innerHTML = "";
+        dd.innerHTML = "Resultado:<br/>";
       }
     </script>
   </body>
