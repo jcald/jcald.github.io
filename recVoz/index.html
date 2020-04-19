@@ -37,7 +37,10 @@
     </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
     <script>
-      dd = document.getElementById("debug#n1");
+      function clear() {
+        dd.innerHTML = "Resultado:<br/>";
+      }
+      dd = document.getElementById("debug");
       if (annyang) {
         // Let's define a command.
         var commands = {
@@ -67,11 +70,7 @@
 
         // Start listening.
         annyang.start();
-      
-      function clear() {
-        dd.innerHTML = "Resultado:<br/>";
       }
-    }
     </script>
   </body>
 </html>
