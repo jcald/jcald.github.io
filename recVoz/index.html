@@ -8,11 +8,17 @@
       .box {
         position: relative;
       }
+      
       .btnClear {
         background-color: darkorange;
         position: absolute;
         bottom: 0;
         right: 0;
+      }
+
+      .ta {
+        background-color: deepskyblue;
+        color: brown;
       }
     </style>
   </head>
@@ -60,10 +66,14 @@
         annyang.setLanguage("es-PE");
 
         annyang.addCallback("result", function (phrases) {
-          dd.innerHTML += "<li>" + phrases[0] + "<li/>";
-          dd.innerHTML += "<li>" + phrases[1] + "<li/>";
-          dd.innerHTML += "<li>" + phrases[2] + "<li/>";
-          dd.innerHTML += "<li>" + phrases + "<li/>";
+          for (const key in phrases) {
+            if (phrases.hasOwnProperty(key)) {
+              const element = phrases[key];
+              dd.innerHTML += "<li>" + element + "<li/>";
+            }
+          }
+
+          dd.innerHTML += "<textarea class='ta'>" + phrases + "</textarea>"+"<br>";
           // console.log("I think the user said: ", phrases[0]);
           // console.log(
           // "But then again, it could be any of the following: ",
