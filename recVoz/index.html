@@ -33,11 +33,13 @@
     <div class="box">
       <!-- stuff -->
       <!-- <p class="bet_time">Bet 5 days ago</p> -->
-      <button class="btnClear" onclick="clear()">Clear</button>
+      <button type="button" class="btnAlert" onclick="alert('En clear!')">Alert</button>
+      <button type="button" class="btnClear" onclick="limpia()">Clear</button>
     </div>
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
     <script>
-      function clear() {
+      function limpia() {
         console.log('clear');
         document.getElementById("debug").innerHTML = "Resultado:<br/>";
       }
